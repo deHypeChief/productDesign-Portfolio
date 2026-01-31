@@ -9,11 +9,12 @@ export function Navbar() {
                     <p className="font-medium">Darkerhills</p>
                 </div>
                 <div className="flex gap-20" >
-                    <p className="font-medium">Resume</p>
-                    <p className="font-medium">About Me</p>
-                    <p className="font-medium">Socials</p>
+                    <a href="#aboutme" className="font-medium">About Me</a>
+                    <a href="#resume" className="font-medium">Resume</a>
+                    <a href="#socials" className="font-medium">Socials</a>
                 </div>
                 <Button className="bg-[#FDBA0D] text-[#0B0B0B] hover:bg-[#FEEAB4] transition-colors duration-300">
+                        <img src="/images/Vector.svg" alt="Envelope" />
                     <p>Get in touch</p>
                 </Button>
 

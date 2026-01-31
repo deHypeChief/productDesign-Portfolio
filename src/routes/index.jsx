@@ -1,12 +1,42 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../assets/blocks/navbar";
 import { Button } from "../assets/blocks/button";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
 
+    const [activeIndex, setActiveIndex] = useState(0);
+    const refs = useRef([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const index = refs.current.indexOf(entry.target);
+                        if (index !== -1) {
+                            setActiveIndex(index);
+                        }
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        refs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => {
+            refs.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+        };
+    }, []);
+
     const product = [
         {
-            img: "/images/Rectangle 12.svg",
+            img: "/images/Frame 18.png",
             type: "Product design",
             description: "Drove product design and design system improvements during a growth phase in which the company exceeded $1B in total transaction volume.",
             link: "/",
@@ -14,20 +44,20 @@ export default function Home() {
             title: "XO Market"
         },
         {
-            img: "/images/Rectangle 12.svg",
-            type: "Product design",
-            description: "Drove product design and design system improvements during a growth phase in which the company exceeded $1B in total transaction volume.",
+            img: "/images/Frame 2087329340.png",
+            type: " Product Audit",
+            description: "Audited and redesigned web app UX, contributing to $600K+ in trading volume within three days and supporting $25M in token sales.",
             link: "/",
-            productType: "Seed",
-            title: "XO Market"
+            productType: "Series A",
+            title: "Universal X"
         },
         {
-            img: "/images/Rectangle 12.svg",
-            type: "Product design",
-            description: "Drove product design and design system improvements during a growth phase in which the company exceeded $1B in total transaction volume.",
+            img: "/images/Frame 2087329341.png",
+            type: "Branding, Product design",
+            description: "Collaborated with founders to create the the visual language, branding, design system, and contributed to feature development.",
             link: "/",
-            productType: "Seed",
-            title: "XO Market"
+            productType: "Pre-seed",
+            title: "Small search"
         }
     ]
     return (
@@ -62,7 +92,7 @@ export default function Home() {
 
             </div>
 
-            <div className="px-20 py-10">
+            <div className="px-20 py-10" >
                 <p className="font-semibold w-2xl text-4xl">
                     Hi, I’m Joseph and I craft premium experiences and solutions that lead to
                     <span className="text-[#FDBA0D]"> conversion</span> and
@@ -70,16 +100,16 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-2 px-20 py-40 relative">
+            <div className="grid grid-cols-2 px-20 py-40 relative" id="resume">
                 <aside className="pt-20 space-y-5 sticky top-20 self-start">
                     {
                         product.map((item, index) => (
                             <div key={index} className="w-2/3">
-                                <div className="flex justify-between border-b-2 pb-2 opacity-40">
+                                <div className={`flex justify-between border-b-2 pb-2 ${index === activeIndex ? 'opacity-100' : 'opacity-40'}`}>
                                     <p>{`0${index + 1}`}</p>
                                     <p>{item.productType}</p>
                                 </div>
-                                <p className="font-semibold text-[#FDBA0D] text-2xl pt-3">{item.title}</p>
+                                <p className={`font-semibold text-2xl pt-3 ${index === activeIndex ? 'text-[#FDBA0D]' : 'text-white opacity-40'}`}>{item.title}</p>
                             </div>
                         ))
                     }
@@ -88,7 +118,7 @@ export default function Home() {
                 <div className="space-y-36">
                     {
                         product.map((item, index) => (
-                            <div key={index}>
+                            <div key={index} ref={el => refs.current[index] = el}>
                                 <div className="h-[430px] bg-amber-500">
                                     <img src={item.img} alt="Project Image" className="w-full h-full object-cover" />
                                 </div>
@@ -113,16 +143,17 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="h-[800px] flex items-center justify-center">
+            <div className="h-[800px] flex items-center justify-center" id="aboutme">
                 <div className="flex flex-col items-center  justify-center space-y-14">
-                    <div className="h-[100px] w-[100px] bg-white rounded-full">
-
+                    <div className="h-[100px] w-[100px] bg-white rounded-full bg-[url('')] bg-no-repeat bg-cover">
+                        <img src="/images/Ellipse 11.png" alt="Avatar" className="h-full w-full rounded-full" />
                     </div>
                     <p className="font-semibold w-2xl text-2xl text-center">
                         I’m a product designer who builds products that are easy to understand, easy to trust, and designed to convert.
                     </p>
 
                     <Button className="bg-[#FDBA0D] text-[#0B0B0B] hover:bg-[#FEEAB4] transition-colors duration-300 ">
+                        <img src="/images/Vector.svg" alt="Envelope" />
                         <p>Get in touch</p>
                     </Button>
                     <div className="p-3 border-[#FFF9EB]/10 border-3 bg-[#FFF9EB]/10 rounded-full flex gap-3 items-center text-sm ">
@@ -140,7 +171,7 @@ export default function Home() {
                 ))}
             </div>
 
-            <div>
+            <div id="socials">
                 <div className="flex justify-center flex-col items-center pt-50">
                     <div className="flex gap-10 ">
 
