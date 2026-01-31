@@ -64,7 +64,7 @@ export default function Home() {
         <>
             <Navbar />
 
-            <div className="min-h-screen flex flex-col justify-center items-center gap-40 relative bg-[url('./images/wlwewlj.png')] bg-no-repeat bg-cover bg-bottom ">
+            <div className="min-h-screen flex flex-col justify-center items-center gap-40 relative bg-[url('/images/wlwewlj.png')] bg-no-repeat bg-cover bg-bottom ">
                 <div className="flex flex-col items-center">
                     <p className="text-[140px]">
                         PRODUCT DESIGN
