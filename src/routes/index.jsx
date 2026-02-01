@@ -93,7 +93,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="w-full absolute bottom-10">
+                <div className="w-full absolute bottom-16">
                     <Marquee autoFill pauseOnHover speed={60} gradient={false} className="w-full">
                         {marqueeImages.map((src, index) => (
                             <div key={index} className="mx-8 flex items-center">
