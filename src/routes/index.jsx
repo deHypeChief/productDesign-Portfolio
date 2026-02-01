@@ -80,7 +80,7 @@ export default function Home() {
                     <p className="md:text-[140px] text-[40px] text-center font-bold">
                         PRODUCT DESIGN
                     </p>
-                    <div className="flex gap-4 items-center justify-between w-full px-2 md:px-0">
+                    <div className="flex md:gap-4 items-center justify-between w-full px-2 md:px-0">
                         <div className="h-1 md:h-2 w-1 md:w-2 rounded-full bg-[#FEEAB4]" />
                         <p className="text-xs md:text-lg" style={{ background: 'linear-gradient(180deg,#ffffff 0%, #000000 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', color: 'transparent' }}>Web 3</p>
                         <div className="h-1 md:h-2 w-1 md:w-2 rounded-full bg-[#FEEAB4]" />
