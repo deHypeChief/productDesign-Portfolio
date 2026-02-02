@@ -179,7 +179,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="py-[160px] flex items-center justify-center bg-no-repeat bg-cover bg-bottom relative mb-10" id="aboutme">
+            <div className="py-[100px] md:py-[160px] flex items-center justify-center bg-no-repeat bg-cover bg-bottom relative mb-10" id="aboutme">
                 <div className="h-full w-full absolute top-0 left-0 flex items-center justify-center ">
                     <div className="h-[250px] w-[250px] rounded-full bg-[#FDBA0D] blur-3xl" />
                     <div className="h-full w-full bg-[#0B0B0B]/60 absolute" />
@@ -188,7 +188,7 @@ export default function Home() {
                     <div className="h-[100px] w-[100px] bg-white rounded-full bg-[url('')] bg-no-repeat bg-cover">
                         <img src="/images/Ellipse 11.png" alt="Avatar" className="h-full w-full rounded-full" />
                     </div>
-                    <p className="font-semibold md:w-2xl text-2xl text-center">
+                    <p className="font-semibold md:w-2xl text-sm md:text-2xl text-center px-8 md:px-0">
                         I’m a product designer who builds products that are easy to understand, easy to trust, and designed to convert.
                     </p>
 
@@ -223,13 +223,6 @@ export default function Home() {
                     ))}
                 </Marquee>
 
-                <Marquee autoFill pauseOnHover speed={50} gradient={false} className="w-full">
-                    {showcaseImages.map((src, index) => (
-                        <div key={`extra-${index}`} className="mx-2 flex items-center">
-                            <img src={src} alt={`Showcase extra ${index}`} className="h-[200px] md:h-[300px] object-cover rounded-3xl" />
-                        </div>
-                    ))}
-                </Marquee>
             </div>
 
             <div id="socials">
