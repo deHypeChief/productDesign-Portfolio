@@ -192,10 +192,13 @@ export default function Home() {
                         I’m a product designer who builds products that are easy to understand, easy to trust, and designed to convert.
                     </p>
 
-                    <Button className="bg-[#FDBA0D] text-[#0B0B0B] hover:bg-[#FEEAB4] transition-colors duration-300 shadow-lg shadow-[#FEEAB4] hover:shadow-[#FDBA0D]">
-                        <img src="/images/Vector.svg" alt="Envelope" />
-                        <p>Get in touch</p>
-                    </Button>
+                    <a href="#socials">
+                        <Button className="bg-[#FDBA0D] text-[#0B0B0B] hover:bg-[#FEEAB4] transition-colors duration-300 shadow-lg shadow-[#FEEAB4] hover:shadow-[#FDBA0D]">
+                            <img src="/images/Vector.svg" alt="Envelope" />
+                            <p>Get in touch</p>
+                        </Button>
+                    </a>
+
                     <div className="-mt-2 p-3 border-[#FFF9EB]/10 border-3 bg-[#FFF9EB]/10 rounded-full flex gap-3 items-center text-sm ">
                         <div className="h-3 w-3 rounded-full bg-[#FDBA0D]" />
                         <p>Typically replies within 10mins</p>
