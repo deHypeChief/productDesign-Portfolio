@@ -43,6 +43,17 @@ export default function Home() {
         "/images/Logo 1.svg"
     ];
 
+    const showcaseImages = [
+        "/showcase/10.png",
+        "/showcase/ddf.jpeg",
+        "/showcase/df.jpeg",
+        "/showcase/sdfsf.jpeg",
+        "/showcase/sfsf.jpeg",
+        "/showcase/wsf.jpeg",
+        "/showcase/WhatsApp Image 2026-02-01 at 10.14.19 PMd.jpeg",
+        "/showcase/WhatsApp Image 2026-02-01 at 10.14.19 PM.jpeg",
+    ]
+
     const marqueeImages = carouselImages; // use react-fast-marquee's autoFill to duplicate content when necessary
 
     const product = [
@@ -50,7 +61,7 @@ export default function Home() {
             img: "/images/Frame 18.png",
             type: "Product design",
             description: "Drove product design and design system improvements during a growth phase in which the company exceeded $1B in total transaction volume.",
-            link: "/",
+            link: "https://beta.xo.market/",
             productType: "Seed",
             title: "XO Market"
         },
@@ -58,7 +69,7 @@ export default function Home() {
             img: "/images/Frame 2087329340.png",
             type: " Product Audit",
             description: "Audited and redesigned web app UX, contributing to $600K+ in trading volume within three days and supporting $25M in token sales.",
-            link: "/",
+            link: "https://universalx.app/home",
             productType: "Series A",
             title: "Universal X"
         },
@@ -66,7 +77,7 @@ export default function Home() {
             img: "/images/Frame 2087329341.png",
             type: "Branding, Product design",
             description: "Collaborated with founders to create the the visual language, branding, design system, and contributed to feature development.",
-            link: "/",
+            link: "https://smallsearch.online",
             productType: "Pre-seed",
             title: "Small search"
         }
@@ -77,7 +88,7 @@ export default function Home() {
 
             <div className="min-h-screen flex flex-col justify-center items-center gap-40 relative bg-[url('/images/wlwewlj.png')] bg-no-repeat bg-cover bg-bottom ">
                 <div className="flex flex-col items-center md:scale-90">
-                    <p className="md:text-[140px] text-[40px] text-center font-bold">
+                    <p className="md:text-[140px] text-[40px] text-center font-bold text-[#FFF9EB]" >
                         PRODUCT DESIGN
                     </p>
                     <div className="flex md:gap-4 items-center justify-between w-full px-2 md:px-0">
@@ -192,13 +203,31 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* <div className="grid grid-cols-5 grid-rows-3 gap-2">
-                {Array.from({ length: 15 }, (_, i) => (
-                    <div key={i} className="bg-white h-[200px] rounded-lg">
-                        
-                    </div>
-                ))}
-            </div> */}
+            <div className="my-10 space-y-6 mb-40">
+                <Marquee autoFill pauseOnHover speed={40} gradient={false} className="w-full">
+                    {showcaseImages.map((src, index) => (
+                        <div key={index} className="mx-2 flex items-center">
+                            <img src={src} alt={`Showcase ${index}`} className="h-[200px] md:h-[300px] object-cover rounded-3xl" />
+                        </div>
+                    ))}
+                </Marquee>
+
+                <Marquee autoFill pauseOnHover speed={40} gradient={false} direction="right" className="w-full">
+                    {showcaseImages.map((src, index) => (
+                        <div key={`rev-${index}`} className="mx-2 flex items-center">
+                            <img src={src} alt={`Showcase rev ${index}`} className="h-[200px] md:h-[300px] object-cover rounded-3xl" />
+                        </div>
+                    ))}
+                </Marquee>
+
+                <Marquee autoFill pauseOnHover speed={50} gradient={false} className="w-full">
+                    {showcaseImages.map((src, index) => (
+                        <div key={`extra-${index}`} className="mx-2 flex items-center">
+                            <img src={src} alt={`Showcase extra ${index}`} className="h-[200px] md:h-[300px] object-cover rounded-3xl" />
+                        </div>
+                    ))}
+                </Marquee>
+            </div>
 
             <div id="socials">
                 <div className="flex justify-center flex-col items-center ">
@@ -207,32 +236,32 @@ export default function Home() {
                         <div className="">
                             <p className="md:w-[350px] font-semibold text-2xl text-[#FFF9EB]/40 mb-8">Question, an idea, or a project you need help with? <span className="text-[#FFF9EB]">Reach out</span></p>
 
-                            <div className="flex gap-3 items-center text-lg font-bold">
+                            <a href="https://calendly.com/effiwattjoseph/this-event-is-only-for-ethan" target="_blank" rel="noopener noreferrer" className="flex gap-3 items-center text-lg font-bold">
                                 <div className="w-fit p-3 px-5 border-[#FFF9EB]/10 border-3 bg-[#FFF9EB]/10 rounded-full flex gap-3 items-center text-sm ">
                                     <img src="/images/image 1673907340.svg" alt="Logo" className="w-20" />
                                 </div>
 
                                 <p>Book Meeting</p>
-                            </div>
+                            </a>
                         </div>
 
                         <div className="flex gap-x-4 md:w-[400px] flex-wrap h-fit gap-y-3">
                             <div className="flex gap-1 items-center text-lg font-semibold">
                                 <img src="/images/EnvelopeSimple.svg" alt="Arrow Down" />
-                                <p className="text-[#FDBA0D] text-xs md:text-sm">Design@darkerhills.online</p>
+                                <a href="mailto:Design@darkerhills.online" target="_blank" rel="noopener noreferrer" className="text-[#FDBA0D] text-xs md:text-sm">Design@darkerhills.online</a>
                             </div>
-                            <div className="flex gap-1 items-center text-lg font-semibold">
+                            <a href="https://x.com/darkerhills" target="_blank" rel="noopener noreferrer" className="flex gap-1 items-center text-lg font-semibold">
                                 <img src="/images/XLogo.svg" alt="Arrow Down" />
                                 <p className="text-[#FDBA0D] text-xs md:text-sm">Darkerhills</p>
-                            </div>
-                            <div className="flex gap-1 items-center text-lg font-semibold">
+                            </a>
+                            <a href="https://t.me/darkerhills" target="_blank" rel="noopener noreferrer" className="flex gap-1 items-center text-lg font-semibold">
                                 <img src="/images/TelegramLogo.svg" alt="Arrow Down" />
                                 <p className="text-[#FDBA0D] text-xs md:text-sm">@Darkerhills</p>
-                            </div>
-                            <div className="flex gap-1 items-center text-lg font-semibold">
+                            </a>
+                            <a href="https://www.linkedin.com/in/josepheffiwatt/" target="_blank" rel="noopener noreferrer" className="flex gap-1 items-center text-lg font-semibold">
                                 <img src="/images/LinkedinLogo.svg" alt="Arrow Down" />
                                 <p className="text-[#FDBA0D] text-xs md:text-sm">Joseph Effiwatt</p>
-                            </div>
+                            </a>
                         </div>
                     </div>
 
