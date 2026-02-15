@@ -13,7 +13,7 @@ export function Navbar() {
                     <a href="#resume" className="font-medium">Resume</a>
                     <a href="#socials" className="font-medium">Socials</a>
                 </div>
-                <a href="mailto:Design@darkerhills.online"  className="md:hidden">
+                <a href="mailto:Design@darkerhills.online"  className="">
                     <Button className="bg-[#FDBA0D] text-[#0B0B0B] hover:bg-[#FEEAB4] transition-colors duration-300 shadow-lg shadow-[#FEEAB4] hover:shadow-[#FDBA0D]">
                         <img src="/images/Vector.svg" alt="Envelope" />
                         <p>Get in touch</p>
